@@ -67,11 +67,11 @@ for (i in seq_along(pattern_list)){
 }
 
 ### 5. Create a second, independent tidy set with the average of each variable for each activity and each subject
-# group the dataframe based on subject and activity, calculate mean
+# group the data frame based on subject and activity, calculate mean
 activity_mean <- extract_activity %>% 
   group_by(subject, activity) %>% 
   summarise(across(everything(),mean))
 
-# extract tidy files to .txt
-write.table(extract_activity, "tidy_activity.text", row.names = FALSE, quote = FALSE)
-write.table(activity_mean, "tidy_activity_mean.text", row.names = FALSE, quote = FALSE)
+# extract tidy files to .csv
+write.csv(extract_activity, "tidy_activity.csv", row.names = FALSE, quote = FALSE)
+write.csv(activity_mean, "tidy_activity_mean.csv", row.names = FALSE, quote = FALSE)
