@@ -75,3 +75,7 @@ activity_mean <- extract_activity %>%
 # extract tidy files to .csv
 write.csv(extract_activity, "tidy_activity.csv", row.names = FALSE, quote = FALSE)
 write.csv(activity_mean, "tidy_activity_mean.csv", row.names = FALSE, quote = FALSE)
+
+# extract tidy files to .txt
+write.table(extract_activity, "tidy_activity.txt", row.names = FALSE, quote = FALSE)
+write.table(activity_mean, "tidy_activity_mean.txt", row.names = FALSE, quote = FALSE)
